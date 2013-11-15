@@ -48,20 +48,20 @@ public class ValidThread implements Runnable {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}
-			if (count >= 30) {
-				try {
-					peer.getWriter()
-							.write(new JSONArray().put("no").toString());
-					peer.setStatus(HttpServletResponse.SC_OK);
-					peer.setContentType("application/json");
-					context.complete();
-					break;
-				} catch (Exception e) {
-					break;
-				} 
-
-			}
+			} 
+//			if (count >= 30) {
+//				try {
+//					peer.getWriter()
+//							.write(new JSONArray().put("no").toString());
+//					peer.setStatus(HttpServletResponse.SC_OK);
+//					peer.setContentType("application/json");
+//					context.complete();
+//					break;
+//				} catch (Exception e) {
+//					break;
+//				} 
+//
+//			}
 		}
 
 	}

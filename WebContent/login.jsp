@@ -15,13 +15,19 @@ String NID = Util.getUUID();
         jQuery(function($) {
 
             function processEvents(events) {
+                /*
                 if (events.length) {
                     $('#logs').append('<span style="color: blue;">[client] ' + events.length + ' events</span><br/>');
                 } else {
                     $('#logs').append('<span style="color: red;">[client] no event</span><br/>');
                 }
+				*/
                 for (var i in events) {
-                	$('#logs').append('<span>[event] ' + events[i] + '</span><br/>');
+                    if (events[i] !="")
+                        {
+                    		$('#logs').append('<span>[event] ' + events[i] + '</span><br/>');
+                        }
+                	
                     if ( events[i] == "pass")
                         {
                          return false;
