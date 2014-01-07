@@ -17,7 +17,7 @@ public class RedisThread implements Runnable {
 			Jedis jedis = new Jedis("192.168.103.18");
 			jedis.auth("123456redis");
 			System.out.println("In get message....");
-			List<String> o = jedis.blpop(10, "r_queue");
+			List<String> o = jedis.blpop(10, "passed_1");
 			System.out.println("After get message....");
 			if (o != null && o.size() > 0) {
 				for (String str : o) {
@@ -31,7 +31,7 @@ public class RedisThread implements Runnable {
 
 						try {
 							peer.getWriter().write(
-									new JSONArray().put("get message").toString());
+									new JSONArray().put("pass").toString());
 							peer.setStatus(HttpServletResponse.SC_OK);
 							peer.setContentType("application/json");
 							peer.flushBuffer();
